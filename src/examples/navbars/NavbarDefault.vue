@@ -808,9 +808,7 @@ watch(
                       >
                         元素
                       </h6>
-                      <span class="text-sm"
-                        >颜色，图标和字体</span
-                      >
+                      <span class="text-sm">颜色，图标和字体</span>
                     </a>
                   </li>
                   <li class="nav-item list-group-item border-0 p-0">
@@ -823,9 +821,7 @@ watch(
                       >
                         组件
                       </h6>
-                      <span class="text-sm"
-                        >探索重新设计的组件</span
-                      >
+                      <span class="text-sm">探索重新设计的组件</span>
                     </a>
                   </li>
                 </ul>

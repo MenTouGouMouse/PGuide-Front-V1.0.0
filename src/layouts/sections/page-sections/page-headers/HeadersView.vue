@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 <template>
   <BaseLayout
-    title="Page Headers"
+    title="Page Headers2"
     :breadcrumb="[
       { label: 'Page Sections', route: '/sections/page-sections/page-headers' },
       { label: 'Page Headers' },

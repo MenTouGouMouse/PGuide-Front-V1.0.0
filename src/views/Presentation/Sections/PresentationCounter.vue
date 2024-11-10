@@ -11,10 +11,9 @@ import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCoun
             <div class="col-md-4 position-relative">
               <DefaultCounterCard
                 color="success"
-                title="Coded Elements"
-                description="From buttons, to inputs, navbars, alerts or cards, you are
-                  covered"
-                :count="70"
+                title="获得荣誉"
+                description="不过身外之物罢了"
+                :count="80"
                 suffix="+"
                 :duration="3000"
                 divider="vertical"
@@ -23,10 +22,9 @@ import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCoun
             <div class="col-md-4 position-relative">
               <DefaultCounterCard
                 color="success"
-                title="Design Blocks"
-                description="Mix the sections, change the colors and unleash your
-                  creativity"
-                :count="15"
+                title="成员"
+                description="好好好，都是大佬"
+                :count="25"
                 suffix="+"
                 :duration="3000"
                 divider="vertical"
@@ -35,10 +33,9 @@ import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCoun
             <div class="col-md-4">
               <DefaultCounterCard
                 color="success"
-                title="Pages"
-                description="Save 3-4 weeks of work when you use our pre-made pages for
-                  your website"
-                :count="4"
+                title="开发了一些东西"
+                description="CQMU-SSO、数据中心、GPT API公共调用、docker镜像站、重医校级镜像站之类的"
+                :count="34"
                 :duration="3000"
               />
             </div>

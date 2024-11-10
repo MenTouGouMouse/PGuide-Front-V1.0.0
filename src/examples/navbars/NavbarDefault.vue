@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { ref, watch } from "vue";
-import { useWindowsWidth } from "../../assets/js/useWindowsWidth";
+import { useWindowsWidth } from "@/assets/js/useWindowsWidth";
 
 // images
 import ArrDark from "@/assets/img/down-arrow-dark.svg";
@@ -15,31 +15,31 @@ const props = defineProps({
     color: String,
     label: String,
     default: () => ({
-      route: "https://www.creative-tim.com/product/vue-material-kit",
+      route: "https://docs.pguide.studio/",
       color: "bg-gradient-success",
-      label: "Free Download"
-    })
+      label: "项导文档中心",
+    }),
   },
   transparent: {
     type: Boolean,
-    default: false
+    default: false,
   },
   light: {
     type: Boolean,
-    default: false
+    default: false,
   },
   dark: {
     type: Boolean,
-    default: false
+    default: false,
   },
   sticky: {
     type: Boolean,
-    default: false
+    default: false,
   },
   darkText: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 // set arrow  color
@@ -74,18 +74,14 @@ const { type } = useWindowsWidth();
 
 if (type.value === "mobile") {
   textDark.value = true;
-} else if (type.value === "desktop" && textDark.value == false) {
+} else if (type.value === "desktop" && textDark.value === false) {
   textDark.value = false;
 }
 
 watch(
   () => type.value,
   (newValue) => {
-    if (newValue === "mobile") {
-      textDark.value = true;
-    } else {
-      textDark.value = false;
-    }
+    textDark.value = newValue === "mobile";
   }
 );
 </script>
@@ -98,7 +94,7 @@ watch(
       'my-3 blur border-radius-lg z-index-3 py-2 shadow py-2 start-0 end-0 mx-4 position-absolute mt-4':
         props.sticky,
       'navbar-light bg-white py-3': props.light,
-      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
+      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark,
     }"
   >
     <div
@@ -113,14 +109,14 @@ watch(
         :class="[
           (props.transparent && textDark.value) || !props.transparent
             ? 'text-dark font-weight-bolder ms-sm-3'
-            : 'text-white font-weight-bolder ms-sm-3'
+            : 'text-white font-weight-bolder ms-sm-3',
         ]"
         :to="{ name: 'presentation' }"
         rel="tooltip"
         title="Designed and Coded by Creative Tim"
         data-placement="bottom"
       >
-        Material Kit 2
+        PGuide Studio
       </RouterLink>
       <RouterLink
         class="navbar-brand d-block d-md-none"
@@ -175,7 +171,7 @@ watch(
                 :class="getTextColor()"
                 >dashboard</i
               >
-              Pages
+              页面
               <img
                 :src="getArrowColor()"
                 alt="down-arrow"
@@ -198,36 +194,36 @@ watch(
                       <div
                         class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1"
                       >
-                        Landing Pages
+                        联系我们
                       </div>
                       <RouterLink
                         :to="{ name: 'about' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>About Us</span>
+                        <span>关于我们</span>
                       </RouterLink>
                       <RouterLink
                         :to="{ name: 'contactus' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Contact Us</span>
+                        <span>联系我们</span>
                       </RouterLink>
                       <RouterLink
                         :to="{ name: 'author' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Author</span>
+                        <span>开发者们</span>
                       </RouterLink>
                       <div
                         class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-0 mt-3"
                       >
-                        Account
+                        登录
                       </div>
                       <RouterLink
                         :to="{ name: 'signin-basic' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Sign In</span>
+                        <span>统一身份认证系统</span>
                       </RouterLink>
                     </div>
                   </div>
@@ -308,7 +304,7 @@ watch(
                   >
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href="javascript:;"
+                      href="javascript:"
                     >
                       <div class="d-flex">
                         <div
@@ -350,7 +346,7 @@ watch(
                   >
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href="javascript:;"
+                      href="javascript:"
                     >
                       <div class="d-flex">
                         <div
@@ -398,7 +394,7 @@ watch(
                   >
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href="javascript:;"
+                      href="javascript:"
                     >
                       <div class="d-flex">
                         <div
@@ -440,7 +436,7 @@ watch(
                   >
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href="javascript:;"
+                      href="javascript:"
                     >
                       <div class="d-flex">
                         <div
@@ -488,7 +484,7 @@ watch(
                   >
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href="javascript:;"
+                      href="javascript:"
                     >
                       <div class="d-flex">
                         <div
@@ -768,7 +764,7 @@ watch(
                 :class="getTextColor()"
                 >article</i
               >
-              Docs
+              文档
               <img
                 :src="getArrowColor()"
                 alt="down-arrow"
@@ -794,7 +790,7 @@ watch(
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                       >
-                        Getting Started
+                        现在开始
                       </h6>
                       <span class="text-sm"
                         >All about overview, quick start, license and
@@ -810,10 +806,10 @@ watch(
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                       >
-                        Foundation
+                        元素
                       </h6>
                       <span class="text-sm"
-                        >See our colors, icons and typography</span
+                        >颜色，图标和字体</span
                       >
                     </a>
                   </li>
@@ -825,11 +821,10 @@ watch(
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                       >
-                        Components
+                        组件
                       </h6>
                       <span class="text-sm"
-                        >Explore our collection of fully designed
-                        components</span
+                        >探索重新设计的组件</span
                       >
                     </a>
                   </li>
@@ -910,8 +905,9 @@ watch(
           </li>
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a
-              href="https://www.github.com/creativetimofficial/vue-material-kit"
+              href="https://github.com/PGuideDev"
               class="nav-link d-flex cursor-pointer align-items-center"
+              target="_blank"
             >
               <svg
                 width="20px"
